@@ -41,6 +41,46 @@ class Student:
         else:
             return False
 
+    def __le__(self, other) :
+        if not(isinstance(other, Student)):
+            return 'Ошибка'
+        if self.av_grade() <= other.av_grade() :
+            return True
+        else:
+            return False
+
+    def __eq__(self, other) :
+        if not(isinstance(other, Student)):
+            return 'Ошибка'
+        if self.av_grade() == other.av_grade() :
+            return True
+        else:
+            return False
+
+    def __ne__(self, other) :
+        if not(isinstance(other, Student)):
+            return 'Ошибка'
+        if self.av_grade() != other.av_grade() :
+            return True
+        else:
+            return False
+
+    def __gt__(self, other) :
+        if not(isinstance(other, Student)):
+            return 'Ошибка'
+        if self.av_grade() > other.av_grade() :
+            return True
+        else:
+            return False
+
+    def __ge__(self, other) :
+        if not(isinstance(other, Student)):
+            return 'Ошибка'
+        if self.av_grade() >= other.av_grade() :
+            return True
+        else:
+            return False
+
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
@@ -72,6 +112,46 @@ class Lecturer(Mentor):
         if not(isinstance(other, Lecturer)):
             return 'Ошибка'
         if self.av_grade() < other.av_grade() :
+            return True
+        else:
+            return False
+
+    def __le__(self, other):
+        if not (isinstance(other, Lecturer)):
+            return 'Ошибка'
+        if self.av_grade() <= other.av_grade():
+            return True
+        else:
+            return False
+
+    def __eq__(self, other):
+        if not (isinstance(other, Lecturer)):
+            return 'Ошибка'
+        if self.av_grade() == other.av_grade():
+            return True
+        else:
+            return False
+
+    def __ne__(self, other):
+        if not (isinstance(other, Lecturer)):
+            return 'Ошибка'
+        if self.av_grade() != other.av_grade():
+            return True
+        else:
+            return False
+
+    def __gt__(self, other):
+        if not (isinstance(other, Lecturer)):
+            return 'Ошибка'
+        if self.av_grade() > other.av_grade():
+            return True
+        else:
+            return False
+
+    def __ge__(self, other):
+        if not (isinstance(other, Lecturer)):
+            return 'Ошибка'
+        if self.av_grade() >= other.av_grade():
             return True
         else:
             return False
@@ -112,6 +192,7 @@ best_student.rate_hw(cool_mentor, 'Python', 9)
 best_student.rate_hw(cool_mentor, 'Java', 10)
 best_student.rate_hw(cool_mentor, 'Java', 5)
 best_student.rate_hw(nice_mentor, 'Java', 10)
+real_student.rate_hw(nice_mentor, 'Java', 10)
 
 print(best_student.grades)
 print(cool_mentor.grades)
